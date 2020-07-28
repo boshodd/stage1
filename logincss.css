@@ -1,0 +1,51 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 1vh;
+    background-color: ffbe0b;
+}
+       
+.container{
+    margin-top:100px;
+        height: 300px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ee6c4d;
+    border:2px solid black;
+    
+    
+}
+.intro{
+    
+    
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-family: Dancing Script;
+    font-size: 22px;
+}
+.details{
+    margin-top: 100px auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+.butt{
+  
+    border-radius: 10px;
+    background-color: #aacc00;
+    color: white;
+    margin-left:50% ;
+    padding: 5px 10px;
+    text-align: center;    
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
