@@ -1,38 +1,48 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1st question</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/b0de26789d.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="logincss.css">
+  <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
 
-    <script src="javascript.js"></script>
 </head>
 
 <body>
-    <div class="container">
-
-        <div class="question">
-            <p>yaw ru no mi dna sselerac elttil eb <br>
-                yad yna gniht yna mrah nac i
-                <br>
-                i ma tahw sseug</p>
-        </div>
-
-        <div >
-            <input type="text" placeholder="11 Letters" id="ans" required class="typing_area"> <br>
-        </div>
-        <div>
-            <input type="button" value="SUBMIT" id="sub" onclick="myfun()" class="submit">
-           
-        </div>
-
-            
-
-        </div>
+  <div class="container">
+    <div class="intro">
+      <h1>Treasure Hunt </h1>
     </div>
+
+    <div class="details">
+      <form name="submit-to-google-sheet">
+        Full Name : <input type="text" name="name" required> <br><br>
+        Mobile No.: <input name="mob_no" type="number" required> <br> <br>
+        <!-- <input name="email" type="email" placeholder="Email" required> <br> -->
+
+        <button type="submit" onclick="dam()" class="butt">Send</button>
+
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzZWeBACL2yrMLGhtEhZF_1Rb16T_dLPqVh-85bq4w3duorbioq/exec'
+    const form = document.forms['submit-to-google-sheet']
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+
+    function dam() {
+      window.location.href = "https://boshodd.github.io/stage1/"
+    }
+  </script>
 </body>
 
 </html>
